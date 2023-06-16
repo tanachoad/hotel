@@ -62,6 +62,57 @@
     </div>
     <!-- Add New User Modal end -->
 
+    <!-- Edit User Modal Start -->
+    <div class="modal fade" tabindex="-1" id="editUserModal">
+    <div class="modal-dialog modal-dialog-centerend">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-header">Edit This User</h5>
+                <button type="buutton" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="edit-user-form" class="p-2" novalidate>
+                    <input type="hidden" name="id" id="id">
+                    <div class="row mb-3 gx-3">
+                        <div class="col">
+                            <input type="text" id="username" name="username" class="form-control form-control-lg" placeholder="Enter User Name" require>
+                            <div class="invalid-feedback">user name is require!</div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                    <input type="text" id="phone" name="phone" class="form-control form-control-lg" placeholder="Enter Yours Phone number" require>
+                            <div class="invalid-feedback">phone number is require!</div>
+                    </div>
+                    <div class="mb-3">
+                    <input type="text" id="room" name="room" class="form-control form-control-lg" placeholder="Enter Yours Room" require>
+                            <div class="invalid-feedback">room is require!</div>
+                    </div>
+                    <div class="mb-3">
+                    <input type="int" id="room_bill" name="room_bill" class="form-control form-control-lg" placeholder="Enter Room Bill" require>
+                            <div class="invalid-feedback">room bill is require!</div>
+                    </div>
+                    <div class="mb-3">
+                    <input type="int" id="electricity_bill" name="electricity_bill" class="form-control form-control-lg" placeholder="Enter Electricity Bill" require>
+                            <div class="invalid-feedback">electricity bill is require!</div>
+                    </div>
+                    <div class="mb-3">
+                    <input type="int" id="water_bill" name="water_bill" class="form-control form-control-lg" placeholder="Enter Water Bill" require>
+                            <div class="invalid-feedback">water bill is require!</div>
+                    </div>
+                    <div class="mb-3">
+                    <input type="int" id="parking_fee" name="parking_fee" class="form-control form-control-lg" placeholder="Enter Parking Fee" require>
+                            <div class="invalid-feedback">parking fee is require!</div>
+                    </div>
+                    <div class="mb-3">
+                    <input type="submit" value="Edit User" class="btn btn-primary btn-block btn-lg" id="edit-user-btn">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Edit User Modal end -->
+
     <div class="container">
     <div class="row mt-4">
         <div class="col-lg-12 d-flex justify-content-between align-items-center">
