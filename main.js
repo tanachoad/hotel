@@ -39,3 +39,27 @@ const fetchAllUsers = async () =>{
     tbody.innerHTML = response;
 }
 fetchAllUsers();
+
+// edit
+tbody.addEventListener("click", (e) =>{
+    if(e.target && e.target.matches("a.editlink")){
+        e.preventDefault();
+        let id = e.target.getAttribute("id");
+        editUser(id);
+    }
+})
+
+const editUser = async (id) =>{
+    const data = await fetch(`action.php?edit=1&id=${id}`,{
+        method: "GET"
+    })
+    const response = await data.json();
+    document.getElementById("id").value = response.id;
+    document.getElementById("username").value = response.username;
+    document.getElementById("phone").value = response.phone;
+    document.getElementById("room").value = response.room;
+    document.getElementById("room_bill").value = response.room_bill;
+    document.getElementById("electricity_bill").value = response.electricity_bill;
+    document.getElementById("water_bill").value = response.water_bill;
+    document.getElementById("parking_fee").value = response.parking_fee;
+}
