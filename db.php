@@ -45,5 +45,43 @@
             $result = $stmt->fetchAll();
             return $result;
         }
+
+        // edit
+        public function readOne($id){
+            $sql = "SELECT * FROM customer WHERE id = :id";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute(['id' => $id]);
+            $result = $stmt->fetch();
+            return $result;
+        }
+
+        public function update($id,
+        $username,
+        $phone,
+        $room,
+        $room_bill,
+        $electricity_bill,
+        $water_bill,
+        $parking_fee){
+        $sql = "UPDATE customer SET username = :username,
+        phone = :phone,  
+        room = :room,
+        room_bill = :room_bill,
+        electricity_bill  = :electricity_bill,
+        water_bill = :water_bill,
+        parking_fee = :parking_fee
+        WHERE id = :id";
+        $stmt = $this->conn->prepar($sql);
+        $stmt->execute([
+        'username' => $username,
+        'phone' => $phone,
+        'room' => $room,
+        'room_bill' => $room_bill,
+        'electricity_bill' => $electricity_bill,
+        'water_bill' => $water_bill,
+        'parking_fee' => $parking_fee,
+        'id' => $id,]);
+        return true;
+    }
     }
 ?>
