@@ -55,4 +55,9 @@ if(isset($_GET['read'])){
         </tr>';
     }
 }
+if(isset($_GET['edit'])){
+    $id = $_GET['id'];
+    $user = $db->readOne($id);
+    echo json_encode($user);
+}
 ?>
